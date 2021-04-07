@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     NoDataFragment noDataFragment;
     AboutUsFragment aboutUsFragment;
     BlankFragment blankFragment;
-
+///
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
