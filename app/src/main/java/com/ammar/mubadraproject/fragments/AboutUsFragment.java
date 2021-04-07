@@ -38,7 +38,7 @@ public class AboutUsFragment extends Fragment {
                 .addEmail("ammar.yasser.yossef.altabaa@gmail.com")
                 .addWebsite("https://play.google.com/store/apps/details?id=com.createegypthatly.hatly/")
 
-                .addPlayStore("com.createegypthatly.hatly")
+                .addPlayStore("com.ammar.mubadraproject")
 
                 .create();
         return aboutPage;

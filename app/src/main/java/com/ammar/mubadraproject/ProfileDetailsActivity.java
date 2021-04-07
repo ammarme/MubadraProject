@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+import com.bumptech.glide.Glide;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 public class ProfileDetailsActivity extends AppCompatActivity {
@@ -14,20 +17,15 @@ public class ProfileDetailsActivity extends AppCompatActivity {
 
     CollapsingToolbarLayout collapsingToolbarLayout;
 
-
-    TextView name;
-    TextView mdeetails;
     TextView item_title;
-
+    TextView descriptionTextView;
+    TextView name;
     ImageView imageViewde;
 
-    public String Areaid = "";
-    public String MainCatogeryidd = "";
-    public String profilename = "";
-    public String profiledescriptio = "";
-    public String profileimage = "";
-    public String title = "";
 
+    public String title = "";
+    public String description = "";
+    public String profileimage = "";
 
 
     @Override
@@ -38,26 +36,27 @@ public class ProfileDetailsActivity extends AppCompatActivity {
 
         collapsingToolbarLayout = findViewById(R.id.collapsing);
 
-
+        item_title = findViewById(R.id.item_title_view);
+        name = findViewById(R.id.item_title_view);
+        descriptionTextView = findViewById(R.id.item_title);
         imageViewde = findViewById(R.id.item_profile_food);
-        item_title = findViewById(R.id.item_title);
 
-        Areaid = getIntent().getStringExtra("LastArea");
-        MainCatogeryidd = getIntent().getStringExtra("LastCateg");
-        profilename = getIntent().getStringExtra("profilenameKey");
+        title = getIntent().getStringExtra("getTitle");
+        description = getIntent().getStringExtra("getDescription");
+        profileimage = getIntent().getStringExtra("getImage");
 
-        profiledescriptio = getIntent().getStringExtra("profiledescriptioKey");
-        profileimage = getIntent().getStringExtra("profileimageKey");
-        title = getIntent().getStringExtra("titleKey");
+        item_title.setText(title);
+        descriptionTextView.setText(description);
 
+        Glide.with(this).load(profileimage).into(imageViewde);
 
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        toolbar.setTitle(profilename);
-//        name.setText(profilename + " - Menus  ");
+//
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(title);
+        name.setText(title );
 
 
 //        mdeetails.setText(profiledescriptio);
-//        Glide.with(this).load(profileimage).into(imageViewde);
 
 //        item_title.setText(title);
 

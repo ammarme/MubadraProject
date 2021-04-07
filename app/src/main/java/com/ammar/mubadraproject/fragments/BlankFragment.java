@@ -97,6 +97,11 @@ public class BlankFragment extends Fragment implements NoteAdapter.OnItemClickLi
         Log.d(TAG, "onItemClick: " + note.getTitle());
 
         Intent intent = new Intent( getContext(), ProfileDetailsActivity.class);
+        intent.putExtra("getTitle", note.getTitle());
+        intent.putExtra("getDescription", note.getDescription());
+        intent.putExtra("getImage", note.getImage());
+
+
         this.startActivity(intent);
 
 
