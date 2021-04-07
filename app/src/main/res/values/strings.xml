@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">MubadraProject</string>
+
+
+    <string name="amount">Amount</string>
+    <string name="downpaymentAr">المقدم</string>
+    <string name="downpayment">Down Payment</string>
+    <string name="feesAr">مصاريف أخري</string>
+    <string name="fees">Fees</string>
+    <string name="interestAr">الفائدة</string>
+    <string name="interest">Interest</string>
+    <string name="loanAr">مبلغ القرض</string>
+    <string name="loan">Loan Amount</string>
+    <string name="monthsAr">بالشهر</string>
+    <string name="months">Months</string>
+    <string name="rebates">Rebates</string>
+    <string name="rebatetax">Rebate before Tax</string>
+    <string name="taxtrade">Trade In before Tax</string>
+    <string name="monthly">Monthly Payment</string>
+    <string name="monthly_paymentEnglish">Monthly Payment</string>
+    <string name="monthly_payment">الدفع الشهري : </string>
+    <string name="payment">Payment</string>
+    <string name="principalAr">أساسي</string>
+    <string name="principal">Principal</string>
+    <string name="mo">MO</string>
+    <string name="no_data_avaliable">No Data Avaliable</string>
+    <string name="salestaxAr">ضريبة المبيعات</string>
+    <string name="salestax">Sales Tax</string>
+    <string name="termAr">مدة القرض</string>
+    <string name="term">Term</string>
+    <string name="tradeinAR">استبدل</string>
+    <string name="tradein">trade in</string>
+    <string name="values_are_estimatedAr">بإختلاف كل بنك </string>
+    <string name="values_are_estimated">Values are Estimated</string>
+    <string name="yearsAr">بالسنه</string>
+    <string name="years">Years</string>
+    <string name="home">Home</string>
+    <string name="amortization">amortization</string>
+    <string name="calculateAr">أحسب</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="zero_amount">EGP 0.00</string>
+    <string name="percent">%</string>
+    <string name="reductions_optionalAR">التخفيضات (اختياري)</string>
+    <string name="reductions_optional">Reductions (Optional)</string>
+    <string name="total_loan_costAR">التكلفة الإجمالية : </string>
+    <string name="total_loan_cost">Total Cost</string>
+    <string name="beginning_balanceAr">السعر\nابتداء من</string>
+    <string name="beginning_balance">Beginning\nBalance</string>
+    <string name="ending_balanceAr">الرصيد\nالنهائي</string>
+    <string name="ending_balance">Ending\nBalance</string>
+    <string name="monthAr">الشهر</string>
+    <string name="amortization_scheduleAR">جدول الدفع الزمني </string>
+    <string name="amortization_schedule">Amortization Schedule</string>
+    <string name="total_interestArabic">مجموع الفوائد : </string>
+    <string name="total_interest">Total Interest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activity_main_drawer_open">Open</string>
+    <string name="activity_main_drawer_close">Close</string>
+</resources>

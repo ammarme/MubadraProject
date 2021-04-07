@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mItem1"
+        android:title="احسب القسط"
+        android:icon="@drawable/ic_home"
+
+        />
+    <item
+        android:id="@+id/mItem2"
+        android:title="معلومات"
+        android:icon="@drawable/ic_dashboard"
+        />
+    <item
+        android:id="@+id/mItem3"
+        android:title="نحن"
+        android:icon="@drawable/ic_aboutus"
+        />
+
+
+</menu>

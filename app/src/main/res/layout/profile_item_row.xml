@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="350dp"
+    android:layout_marginBottom="9dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="230dp"
+        android:padding="4dp">
+
+
+        <com.github.siyamed.shapeimageview.RoundedImageView
+            android:id="@+id/profile_imageView"
+            android:layout_width="600dp"
+            android:layout_height="259dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@color/colorPrimaryDark"
+            app:siBorderColor="@color/colorPrimaryDark"
+            app:siBorderWidth="6dp"
+            app:siRadius="25dp" />
+
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/profile_progress"
+            style="@style/SpinKitView.Wave"
+            android:layout_width="407dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            app:SpinKit_Color="@color/colorAccent" />
+
+
+        <TextView
+            android:id="@+id/profile_text_view_title"
+            android:layout_width="369dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/customshape"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Nama Menu"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/profile_short_describ"
+        android:layout_width="399dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="240dp"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Nama Menu"
+        android:textSize="20sp" />
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item android:id="@id/home"
+          android:title="@string/home"
+          android:icon="@mipmap/ic_account_balance_black_48dp"
+          app:showAsAction="ifRoom"/>
+    <item android:id="@+id/amortization"
+        android:title="@string/amortization"
+        android:icon="@mipmap/ic_assignment_black_48dp"
+        app:showAsAction="always"
+        />
+
+
+
+</menu>
