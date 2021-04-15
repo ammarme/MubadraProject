@@ -35,7 +35,7 @@ public class LoanFragment extends Fragment {
 
     protected static final NumberFormat cf = NumberFormat.getCurrencyInstance(new Locale("AR", "EG"));
 
-
+//
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_loann, container, false);
@@ -173,7 +173,7 @@ public class LoanFragment extends Fragment {
         } else {
 
 //            etTerm.setError("Please enter the term of the mLoan.");
-
+/////            etTerm.setError("Please enter the term of the mLoan.");
             Toast.makeText(getView().getContext(), "أدخل قيمة الضريبه او ضعها ب 0", Toast.LENGTH_SHORT).show();
 
         }
