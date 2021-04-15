@@ -62,7 +62,7 @@ public class LoanFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 gatherInputs();
-                loan = new Loan(loanAmount, terms, loanInterest, downPayment, tradeIn, salesTax, fees);
+                loan = new Loan(loanAmount, terms, loanInterest, downPayment, tradeIn, fees);
 
                 tvMonthlyPaymentVal.setText(cf.format(loan.getMonthlyPayment()));
                 tvLoanTotal.setText(cf.format(loan.getTotalLoanPayments()));
@@ -122,13 +122,7 @@ public class LoanFragment extends Fragment {
         }
 
 
-        String  salesTax  = etSalesTax.getEditText().getText().toString().trim();
-        if (salesTax != null && salesTax.length() > 0) {
-            loanInterest = Double.parseDouble(salesTax);
 
-        } else {
-            Toast.makeText(getView().getContext(), "أدخل قيمة الضريبه او ضعها ب 0", Toast.LENGTH_SHORT).show();
-        }
 
 
         String  DownPayment  = etDownPayment.getEditText().getText().toString().trim();
@@ -174,7 +168,7 @@ public class LoanFragment extends Fragment {
 
 //            etTerm.setError("Please enter the term of the mLoan.");
 /////            etTerm.setError("Please enter the term of the mLoan.");
-            Toast.makeText(getView().getContext(), "أدخل قيمة الضريبه او ضعها ب 0", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getView().getContext(), "أدخل قيمة", Toast.LENGTH_SHORT).show();
 
         }
 
@@ -200,7 +194,6 @@ public class LoanFragment extends Fragment {
         etEditInterest.getEditText().setText("");
         etFees.getEditText().setText("");
         etLoanAmount.getEditText().setText("");
-        etSalesTax.getEditText().setText("");
         etTerm.getEditText().setText("");
         etTradeIn.getEditText().setText("");
         tvLoanInterestVal.setText("ج.م 0.00");

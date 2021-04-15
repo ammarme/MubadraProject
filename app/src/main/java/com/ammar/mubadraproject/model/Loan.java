@@ -28,8 +28,7 @@ public class Loan implements Serializable {
 
     AmortizationItem[] amortizationItems;
 
-    public Loan(double loanAmount, int termInYears, double annualInterestRate, double downPayment, double tradeInValue, double
-            salesTaxRate, double fees) {
+    public Loan(double loanAmount, int termInYears, double annualInterestRate, double downPayment, double tradeInValue, double fees) {
         this.loanAmount = loanAmount;
         this.termInYears = termInYears;
         this.interestRate = annualInterestRate;
@@ -37,14 +36,14 @@ public class Loan implements Serializable {
         amortizationItems = new AmortizationItem[termInYears * 12];
 
         double taxableAmount = loanAmount - tradeInValue;
-        double salesTax = taxableAmount * salesTaxRate / 100D;
-        double financedAmount = taxableAmount + salesTax + fees - downPayment;
+//        double salesTax = taxableAmount * salesTaxRate / 100D;
+        double financedAmount = taxableAmount + fees - downPayment;
 
         monthlyPayment = calculateMonthlyPayment(financedAmount, termInYears, annualInterestRate);
         termInMonths = termInYears * 12;
         totalLoanPayments = monthlyPayment * termInMonths;
         totalLoanInterest = totalLoanPayments - financedAmount;
-        totalCost = loanAmount + totalLoanInterest + salesTax + fees;
+        totalCost = loanAmount + totalLoanInterest  + fees;
 
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance();
         NumberFormat interestFormat = NumberFormat.getPercentInstance();

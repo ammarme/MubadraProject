@@ -176,22 +176,19 @@
             android:orientation="horizontal">
 
 
-
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etEditInterest"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
+                android:layout_width="271dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:layout_weight=".2"
-                android:inputType="numberDecimal"
-                android:nextFocusRight="@id/etSalesTax">
+                android:layout_weight=".5"
+                android:layout_marginRight="22dp"
+                android:inputType="numberDecimal">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint= "@string/interestAr" />
+                    android:hint="@string/interestAr" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -206,38 +203,38 @@
                 android:textSize="@dimen/_18sdp" />
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etSalesTax"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                 android:layout_weight=".2"
-                android:inputType="numberDecimal"
-                android:nextFocusRight="@id/etTerm"
-                 android:textAlignment="center"
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/etSalesTax"-->
+<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                 android:layout_weight=".2"-->
+<!--                android:inputType="numberDecimal"-->
+<!--                android:nextFocusRight="@id/etTerm"-->
+<!--                 android:textAlignment="center"-->
 
 
 
-                >
+<!--                >-->
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/dareba" />
-            </com.google.android.material.textfield.TextInputLayout>
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="@string/dareba" />-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="4dp"
-                android:layout_weight="0"
-                android:labelFor="@+id/etSalesTax"
-                android:text="@string/salestaxAr"
-                android:textColor="@android:color/primary_text_light"
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginEnd="4dp"-->
+<!--                android:layout_weight="0"-->
+<!--                android:labelFor="@+id/etSalesTax"-->
+<!--                android:text="@string/salestaxAr"-->
+<!--                android:textColor="@android:color/primary_text_light"-->
 
-                android:textSize="@dimen/_18sdp" />
+<!--                android:textSize="@dimen/_18sdp" />-->
 
 
         </LinearLayout>
@@ -271,7 +268,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight=".2"
                 android:inputType="numberDecimal"
-                android:nextFocusRight="@id/etDownPayment">
+                android:layout_marginRight="22dp"
+
+           >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -336,7 +335,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="ضاف المقدم المتفق عليه من البنك" />
+                    android:hint="ضيف المقدم المتفق عليه من البنك" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -346,6 +345,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:text="@string/downpaymentAr"
+                android:layout_marginRight="@dimen/_100sdp"
                 android:textSize="@dimen/_18sdp" />
 
 
@@ -382,6 +382,8 @@
                 android:layout_marginEnd="4dp"
                 android:labelFor="@+id/etTradeIn"
                 android:text="@string/tradeinAR"
+                android:layout_marginRight="@dimen/_100sdp"
+
                 android:textSize="@dimen/_18sdp" />
 
         </LinearLayout>
@@ -415,8 +417,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
+                android:layout_marginRight="@dimen/_100sdp"
                 android:text="@string/feesAr"
-                android:textSize="18sp" />
+                android:textSize="@dimen/_10sdp" />
 
         </LinearLayout>
 
