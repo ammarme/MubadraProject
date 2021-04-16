@@ -6,6 +6,7 @@
     <color name="teal_200">#607D8B</color>
     <color name="teal_700">#607D8B</color>
     <color name="black">#607D8B</color>
+    <color name="backgroundlogo">#a2bac4</color>
 
     <item name="primary" type="color">#607D8B</item>
     <item name="colorPrimaryDark" type="color">#455A64</item>
@@ -17,4 +18,4 @@
     <item name="texticon" type="color">#B6B6B6</item>
     <item name="white" type="color">#FFFFFF</item>
     <item name="title" type="color">#FFD9D9D9</item>
-</resources>
+ </resources>
