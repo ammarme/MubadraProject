@@ -8,6 +8,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -122,4 +123,15 @@ public class MainActivity extends AppCompatActivity {
         xact.addToBackStack(null);
         xact.commit();
     }
+
+
+
+
+
+
+
+
+
+
+
 }
