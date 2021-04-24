@@ -38,6 +38,13 @@ public class LoanFragment extends Fragment {
     protected double loanAmount, loanInterest, downPayment, tradeIn, fees;
     protected int terms;
     protected Loan loan;
+    String loann;
+    String Interest;
+    String Feessst;
+    String Termmm ;
+    String DownPayment ;
+    String TradeIn;
+
 
     protected static final NumberFormat cf = NumberFormat.getCurrencyInstance(new Locale("AR", "EG"));
     View view;
@@ -47,8 +54,8 @@ public class LoanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         if (view != null) {
-            if ((ViewGroup)view.getParent() != null)
-                ((ViewGroup)view.getParent()).removeView(view);
+            if ((ViewGroup) view.getParent() != null)
+                ((ViewGroup) view.getParent()).removeView(view);
             return view;
         }
 
@@ -124,26 +131,29 @@ public class LoanFragment extends Fragment {
 
     protected void gatherInputs() {
 
-        String loann = etLoanAmount.getEditText().getText().toString().trim();
-        String Interest = etEditInterest.getEditText().getText().toString().trim();
 
 
         if (loann != null && loann.length() > 0) {
+            loann = etLoanAmount.getEditText().getText().toString().trim();
+
             loanAmount = Double.parseDouble(loann);
         } else {
-            Toast.makeText(getView().getContext(), "أدخل قيمة القرض", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getView().getContext(), "أدخل قيمة القرض بالارقام ", Toast.LENGTH_SHORT).show();
         }
 
 
         if (Interest != null && Interest.length() > 0) {
+            Interest = etEditInterest.getEditText().getText().toString().trim();
             loanInterest = Double.parseDouble(Interest);
         } else {
             Toast.makeText(getView().getContext(), "أدخل قيمة الفائده", Toast.LENGTH_SHORT).show();
         }
 
 
-        String DownPayment = etDownPayment.getEditText().getText().toString().trim();
+
         if (DownPayment != null && DownPayment.length() > 0) {
+
+            DownPayment = etDownPayment.getEditText().getText().toString().trim();
             downPayment = Double.parseDouble(DownPayment);
 
         } else {
@@ -151,9 +161,9 @@ public class LoanFragment extends Fragment {
         }
 
 
-        String TradeIn = etTradeIn.getEditText().getText().toString().trim();
 
         if (TradeIn != null && TradeIn.length() > 0) {
+            TradeIn = etTradeIn.getEditText().getText().toString().trim();
             tradeIn = 0;
             tradeIn = Double.parseDouble(Interest);
 
@@ -161,9 +171,10 @@ public class LoanFragment extends Fragment {
             tradeIn = 0;
         }
 
-        String Feessst = etFees.getEditText().getText().toString().trim();
+
 
         if (Feessst != null && Feessst.length() > 0) {
+            Feessst = etFees.getEditText().getText().toString().trim();
             fees = Double.parseDouble(Feessst);
 
         } else {
@@ -171,10 +182,10 @@ public class LoanFragment extends Fragment {
         }
 
 
-        String Termmm = etTerm.getEditText().getText().toString().trim();
 
         if (Termmm != null && Termmm.length() > 0) {
             if (rbYears.isChecked()) {
+                Termmm = etTerm.getEditText().getText().toString().trim();
                 terms = Integer.parseInt(etTerm.getEditText().getText().toString().trim());
             } else if (rbMonths.isChecked()) {
                 terms = Integer.parseInt(etTerm.getEditText().getText().toString().trim()) / 12;
@@ -183,7 +194,7 @@ public class LoanFragment extends Fragment {
             }
         } else {
 
-//            etTerm.setError("Please enter the term of the mLoan.");
+            etTerm.setError("Please enter the term of the mLoan.");
 /////            etTerm.setError("Please enter the term of the mLoan.");
             Toast.makeText(getView().getContext(), "أدخل قيمة", Toast.LENGTH_SHORT).show();
 
@@ -231,26 +242,4 @@ public class LoanFragment extends Fragment {
 
     }
 
-//
-//    @Override
-//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-//        super.onActivityCreated(savedInstanceState);
-//
-//        if (savedInstanceState != null) {
-//            //probably orientation change
-//            loanAmount = (double) savedInstanceState.getSerializable("loanAmount");
-//        } else {
-//                if (loanAmount != null) {
-//                //returning from backstack, data is fine, do nothing
-//            } else {
-//                //newly created, compute data
-//                myData = computeData();
-//            }
-////        loanAmount = savedInstanceState.getDouble("loanAmount");
-////        loanInterest = savedInstanceState.getDouble("loanInterest");
-////        downPayment = savedInstanceState.getDouble("downPayment");
-////        tradeIn = savedInstanceState.getDouble("tradeIn");
-////        fees = savedInstanceState.getDouble("fees");
-//
-//    }
 }

@@ -146,7 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:layout_marginEnd="@dimen/_8sdp"
-                android:inputType="numberDecimal"
+                android:inputType="number"
                 android:nextFocusRight="@id/tvInterest"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 >
