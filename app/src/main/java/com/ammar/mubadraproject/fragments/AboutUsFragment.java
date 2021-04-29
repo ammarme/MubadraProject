@@ -26,7 +26,7 @@ public class AboutUsFragment extends Fragment {
 
         Element versionElement = new Element();
         versionElement.setTitle("Version 1.0.1");
-        final Typeface face = ResourcesCompat.getFont(getContext(), R.font.des);
+        final Typeface face = ResourcesCompat.getFont(view.getContext(), R.font.des);
 
         View aboutPage = new AboutPage(view.getContext())
                 .isRTL(false)
