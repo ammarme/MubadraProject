@@ -4,6 +4,10 @@
     android:layout_width="wrap_content"
     android:layout_height="350dp"
     android:layout_marginBottom="9dp"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    android:layout_marginRight="10dp"
+android:layout_marginLeft="10dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="4dp">
 

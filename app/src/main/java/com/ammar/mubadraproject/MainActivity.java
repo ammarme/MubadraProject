@@ -23,8 +23,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
 
 
-    ActionBarDrawerToggle actionBarDrawerToggle;
-    LoanFragment loanFragment;
+     LoanFragment loanFragment;
     AmortizationFragment amortizationFragment;
     NoDataFragment noDataFragment;
     AboutUsFragment aboutUsFragment;

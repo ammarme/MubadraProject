@@ -1,13 +1,13 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@android:color/background_light"
-    android:paddingLeft="@dimen/_5sdp"
-    android:paddingTop="@dimen/_5sdp"
-    android:paddingRight="@dimen/_5sdp"
-    android:paddingBottom="@dimen/_5sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00DDC1"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp"
     tools:context=".MainActivity">
 
 
@@ -17,21 +17,17 @@
         android:layout_height="185dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tvLoanTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_4sdp"
             android:freezesText="true"
             android:text="@string/zero_amount"
             android:textColor="@android:color/primary_text_light"
-            android:textSize="@dimen/_30sdp"
+            android:textSize="30dp"
             android:textStyle="bold" />
 
         <LinearLayout
@@ -40,7 +36,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="@dimen/_2sdp">
+            android:padding="2dp">
 
             <TextView
                 android:id="@+id/tvMonthlyPaymentVal"
@@ -49,8 +45,8 @@
                 android:layout_marginEnd="8dp"
                 android:freezesText="true"
                 android:text="@string/zero_amount"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/_18sdp" />
+                android:textColor="@color/white"
+                android:textSize="19dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,8 +75,8 @@
                 android:layout_marginEnd="8dp"
                 android:freezesText="true"
                 android:text="@string/zero_amount"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/_18sdp" />
+                android:textColor="@color/white"
+                android:textSize="19dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -107,8 +103,8 @@
                 android:layout_marginEnd="8dp"
                 android:freezesText="true"
                 android:text="@string/zero_amount"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/_18sdp" />
+                android:textColor="@color/white"
+                android:textSize="19dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -131,10 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llLoanOutputs"
-        android:layout_alignParentStart="false"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/llLoanOutputs"
-        tools:layout_editor_absoluteX="8dp">
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -142,55 +135,49 @@
             android:orientation="horizontal">
 
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
                 android:id="@+id/etLoanAmount"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textAlignment="center"
                 android:layout_weight=".5"
+                android:background="@drawable/rounded_edittextwhite"
                 android:inputType="numberDecimal"
                 android:nextFocusRight="@id/tvInterest"
-
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/loanAr" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:padding="10dp"
+                android:hint="500000" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_marginEnd="6dp"
                 android:labelFor="@id/etLoanAmount"
                 android:text="@string/loanAr"
-                android:textColor="@android:color/primary_text_light"
-                android:textSize="@dimen/_18sdp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
 
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
                 android:id="@+id/etEditInterest"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="271dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:layout_marginRight="22dp"
-                android:inputType="numberDecimal">
+                android:layout_marginEnd="4dp"
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/interestAr" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:textAlignment="center"
+                android:layout_weight=".2"
+                android:background="@drawable/rounded_edittextwhite"
+                android:inputType="numberDecimal"
 
+                android:padding="10dp"
+                android:hint="3" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -198,43 +185,7 @@
                 android:layout_marginEnd="4dp"
                 android:labelFor="@+id/etEditInterest"
                 android:text="@string/interestAr"
-                android:textColor="@android:color/primary_text_light"
-
-                android:textSize="@dimen/_18sdp" />
-
-
-<!--            <com.google.android.material.textfield.TextInputLayout-->
-<!--                android:id="@+id/etSalesTax"-->
-<!--                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                 android:layout_weight=".2"-->
-<!--                android:inputType="numberDecimal"-->
-<!--                android:nextFocusRight="@id/etTerm"-->
-<!--                 android:textAlignment="center"-->
-
-
-
-<!--                >-->
-
-<!--                <com.google.android.material.textfield.TextInputEditText-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:hint="@string/dareba" />-->
-<!--            </com.google.android.material.textfield.TextInputLayout>-->
-
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="10dp"-->
-<!--                android:layout_marginEnd="4dp"-->
-<!--                android:layout_weight="0"-->
-<!--                android:labelFor="@+id/etSalesTax"-->
-<!--                android:text="@string/salestaxAr"-->
-<!--                android:textColor="@android:color/primary_text_light"-->
-
-<!--                android:textSize="@dimen/_18sdp" />-->
+                android:textSize="18sp" />
 
 
         </LinearLayout>
@@ -244,39 +195,37 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingStart="8dp"
+            android:paddingTop="10dp"
             android:paddingEnd="8dp">
+
 
             <RadioButton
                 android:id="@+id/rbYears"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
+                android:checked="true"
                 android:text="@string/yearsAr" />
 
             <RadioButton
                 android:id="@+id/rbMonths"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
                 android:text="@string/monthsAr" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
                 android:id="@+id/etTerm"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight=".2"
+                android:background="@drawable/rounded_edittextwhite"
                 android:inputType="numberDecimal"
-                android:layout_marginRight="22dp"
+                android:textAlignment="center"
+                android:nextFocusRight="@id/etDownPayment"
 
-           >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/termAr" />
-            </com.google.android.material.textfield.TextInputLayout>
+                android:padding="10dp"
+                android:hint="20" />
 
 
             <TextView
@@ -285,10 +234,7 @@
                 android:layout_marginEnd="4dp"
                 android:labelFor="@+id/etTerm"
                 android:text="@string/termAr"
-                android:textColor="@android:color/primary_text_light"
-
-                android:textSize="@dimen/_18sdp" />
-
+                android:textSize="18sp" />
 
         </LinearLayout>
 
@@ -299,158 +245,93 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llLoanInputs"
-        android:layout_alignParentStart="false"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/llLoanInputs"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/lightprimarycolor"
-            android:gravity="center"
-            android:text="@string/reductions_optionalAR" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="4dp"
-
             android:paddingRight="4dp">
 
 
-            <com.google.android.material.textfield.TextInputLayout
+            <EditText
                 android:id="@+id/etDownPayment"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/_230sdp"
-                android:paddingRight="@dimen/_22sdp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                 android:inputType="numberDecimal"
-                android:nextFocusRight="@id/tvInterest"
-
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="ضيف المقدم المتفق عليه من البنك" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
+                android:layout_marginEnd="8dp"
+                android:layout_weight=".5"
+                android:background="@drawable/rounded_edittextwhite"
+                android:inputType="numberDecimal"
+                android:labelFor="@+id/etDownPayment"
+                android:padding="10dp"
+                android:hint="50000"
+                android:textAlignment="center" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:text="@string/downpaymentAr"
-                android:layout_marginRight="@dimen/_100sdp"
-                android:textSize="@dimen/_18sdp" />
-
+                android:textSize="18sp" />
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingLeft="4dp"
+            android:paddingTop="10dp"
             android:paddingRight="4dp">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etTradeIn"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/_230sdp"
-                android:paddingRight="@dimen/_22sdp"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:nextFocusRight="@id/tvInterest"
 
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="استبدال بسعر :" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <TextView
-                android:layout_width="75dp"
+            <EditText
+                android:id="@+id/etFees"
+                android:layout_width="0dp"
+                android:hint="50000"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
-                android:labelFor="@+id/etTradeIn"
-                android:text="@string/tradeinAR"
-                android:layout_marginRight="@dimen/_100sdp"
-
-                android:textSize="@dimen/_18sdp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etFees"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/_230sdp"
-                android:paddingRight="@dimen/_22sdp"
-                android:layout_height="wrap_content"
+                android:layout_weight=".2"
+                android:background="@drawable/rounded_edittextwhite"
                 android:inputType="numberDecimal"
-                android:nextFocusRight="@id/tvInterest"
-
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="أضف مصاريف أخري" />
-            </com.google.android.material.textfield.TextInputLayout>
-
+                android:labelFor="@+id/etFees"
+                android:nextFocusRight="@id/btnCalculate"
+                android:textAlignment="center"
+                android:padding="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
-                android:layout_marginRight="@dimen/_100sdp"
                 android:text="@string/feesAr"
-                android:textSize="@dimen/_10sdp" />
+                android:textSize="18sp" />
+
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:paddingLeft="@dimen/_90sdp"
-
-            >
-
-            <ImageButton
-                android:id="@+id/reseticon"
-                android:layout_width="@dimen/_40sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:src="@drawable/ic_reset" />
-
-            <Button
-                android:id="@+id/btnCalculate"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginLeft="@dimen/_10sdp"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="@string/calculateAr"
-                android:textColor="#ffffff"
-                android:textSize="16sp" />
-        </LinearLayout>
-
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="320dp"
+        android:layout_height="127dp"
+        android:layout_below="@+id/llReductions"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginTop="50dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:backgroundTint="@color/white"
+        android:background="@drawable/rounded_edittextwhite_btn"
+         android:text="@string/calculate"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>

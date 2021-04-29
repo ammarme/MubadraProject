@@ -3,6 +3,7 @@ package com.ammar.mubadraproject.fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,6 @@ import androidx.annotation.Nullable;
 
 import com.ammar.mubadraproject.R;
 import com.ammar.mubadraproject.model.Loan;
-import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
@@ -27,64 +27,39 @@ import java.util.Locale;
 
 
 public class LoanFragment extends Fragment {
-
-    TextInputLayout etLoanAmount, etSalesTax, etEditInterest, etTerm, etDownPayment, etTradeIn, etFees;
+    protected EditText etTerm, etEditInterest, etLoanAmount, etDownPayment, etSalesTax, etTradeIn, etFees;
     protected TextView tvLoanTotal, tvLoanInterestVal, tvMonthlyPaymentVal, tvLoanTotalCostVal;
     protected RadioButton rbYears, rbMonths;
     protected Button btnCalculate;
-    protected ImageButton btnCalculatereset;
-
-
-    protected double loanAmount, loanInterest, downPayment, tradeIn, fees;
+ImageButton imageButton;
+    protected double loanAmount, loanInterest, salesTax, downPayment, tradeIn, fees;
     protected int terms;
     protected Loan loan;
-    String loann;
-    String Interest;
-    String Feessst;
-    String Termmm ;
-    String DownPayment ;
-    String TradeIn;
-
-
     protected static final NumberFormat cf = NumberFormat.getCurrencyInstance(new Locale("AR", "EG"));
-    View view;
 
-    //
+//    protected static final NumberFormat cf = NumberFormat.getCurrencyInstance();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_loannconstrain, container, false);
 
-        if (view != null) {
-            if ((ViewGroup) view.getParent() != null)
-                ((ViewGroup) view.getParent()).removeView(view);
-            return view;
-        }
-
-        View view = inflater.inflate(R.layout.fragment_loann, container, false);
-        if (savedInstanceState != null) {
-            loanAmount = savedInstanceState.getInt("loanAmount", 0);
-            loanInterest = savedInstanceState.getInt("loanInterest", 0);
-            downPayment = savedInstanceState.getInt("downPayment", 0);
-            tradeIn = savedInstanceState.getInt("tradeIn", 0);
-            fees = savedInstanceState.getInt("fees", 0);
-        }
         //load views
+        imageButton = view.findViewById(R.id.resetbtn);
         btnCalculate = view.findViewById(R.id.btnCalculate);
         etDownPayment = view.findViewById(R.id.etDownPayment);
         etEditInterest = view.findViewById(R.id.etEditInterest);
         etFees = view.findViewById(R.id.etFees);
         etLoanAmount = view.findViewById(R.id.etLoanAmount);
-        etSalesTax = view.findViewById(R.id.etSalesTax);
         etTerm = view.findViewById(R.id.etTerm);
-        etTradeIn = view.findViewById(R.id.etTradeIn);
         rbMonths = view.findViewById(R.id.rbMonths);
         rbYears = view.findViewById(R.id.rbYears);
         tvLoanInterestVal = view.findViewById(R.id.tvLoanInterestVal);
         tvLoanTotal = view.findViewById(R.id.tvLoanTotal);
         tvLoanTotalCostVal = view.findViewById(R.id.tvLoanTotalCostVal);
         tvMonthlyPaymentVal = view.findViewById(R.id.tvMonthlyPaymentVal);
-        btnCalculatereset = view.findViewById(R.id.reseticon);
 
         // OnCLickListeners
+
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,24 +67,24 @@ public class LoanFragment extends Fragment {
                 loan = new Loan(loanAmount, terms, loanInterest, downPayment, tradeIn, fees);
 
                 tvMonthlyPaymentVal.setText(cf.format(loan.getMonthlyPayment()));
-                tvLoanTotal.setText(cf.format(loan.getTotalLoanPayments()));
+//                tvLoanTotal.setText(cf.format(loan.getTotalLoanPayments()));
                 tvLoanInterestVal.setText(cf.format(loan.getTotalLoanInterest()));
                 tvLoanTotalCostVal.setText(cf.format(loan.getTotalCost()));
+                Toast.makeText(view.getContext(), "اضغط علي الايقونه بالاعلي لعرض جدول المدفوعات السنوي ", Toast.LENGTH_SHORT).show();
+
             }
         });
-
-//        btnCalculate.setOnLongClickListener(new View.OnLongClickListener() {
-//            @Override
-//            public boolean onLongClick(View v) {
-//                reset();
-//                return true;
-//            }
-//        });
-
-        btnCalculatereset.setOnClickListener(new View.OnClickListener() {
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reset();
+             }
+        });
+        btnCalculate.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(view.getContext(), "شكرا لك ", Toast.LENGTH_SHORT).show();
+                return true;
             }
         });
 
@@ -130,76 +105,44 @@ public class LoanFragment extends Fragment {
     }
 
     protected void gatherInputs() {
-
-
-
-        if (loann != null && loann.length() > 0) {
-            loann = etLoanAmount.getEditText().getText().toString().trim();
-
-            loanAmount = Double.parseDouble(loann);
+        if (etLoanAmount.getText().toString().length() == 0) {
+            etLoanAmount.setError("Please enter the amount of the mLoan.");
         } else {
-            Toast.makeText(getView().getContext(), "أدخل قيمة القرض بالارقام ", Toast.LENGTH_SHORT).show();
+            loanAmount = Double.parseDouble(etLoanAmount.getText().toString());
         }
 
 
-        if (Interest != null && Interest.length() > 0) {
-            Interest = etEditInterest.getEditText().getText().toString().trim();
-            loanInterest = Double.parseDouble(Interest);
+        if (etEditInterest.getText().toString().length() == 0) {
+            etEditInterest.setError("Please enter the interest rate for the mLoan.");
         } else {
-            Toast.makeText(getView().getContext(), "أدخل قيمة الفائده", Toast.LENGTH_SHORT).show();
+            loanInterest = Double.parseDouble(etEditInterest.getText().toString());
         }
 
 
-
-        if (DownPayment != null && DownPayment.length() > 0) {
-
-            DownPayment = etDownPayment.getEditText().getText().toString().trim();
-            downPayment = Double.parseDouble(DownPayment);
-
-        } else {
+        if (etDownPayment.getText().toString().trim().length() == 0) {
             downPayment = 0;
+        } else {
+            downPayment = Double.parseDouble(etDownPayment.getText().toString());
         }
 
 
-
-        if (TradeIn != null && TradeIn.length() > 0) {
-            TradeIn = etTradeIn.getEditText().getText().toString().trim();
-            tradeIn = 0;
-            tradeIn = Double.parseDouble(Interest);
-
-        } else {
-            tradeIn = 0;
-        }
-
-
-
-        if (Feessst != null && Feessst.length() > 0) {
-            Feessst = etFees.getEditText().getText().toString().trim();
-            fees = Double.parseDouble(Feessst);
-
-        } else {
+        if (etFees.getText().toString().trim().length() == 0) {
             fees = 0;
+        } else {
+            fees = Double.parseDouble(etFees.getText().toString());
         }
 
-
-
-        if (Termmm != null && Termmm.length() > 0) {
+        if (etTerm.getText().toString().length() == 0) {
+            etTerm.setError("Please enter the term of the mLoan.");
+        } else {
             if (rbYears.isChecked()) {
-                Termmm = etTerm.getEditText().getText().toString().trim();
-                terms = Integer.parseInt(etTerm.getEditText().getText().toString().trim());
+                terms = Integer.parseInt(etTerm.getText().toString());
             } else if (rbMonths.isChecked()) {
-                terms = Integer.parseInt(etTerm.getEditText().getText().toString().trim()) / 12;
+                terms = Integer.parseInt(etTerm.getText().toString()) / 12;
             } else {
                 Toast.makeText(getActivity(), "Please select Years or Months", Toast.LENGTH_SHORT).show();
             }
-        } else {
-
-            etTerm.setError("Please enter the term of the mLoan.");
-/////            etTerm.setError("Please enter the term of the mLoan.");
-            Toast.makeText(getView().getContext(), "أدخل قيمة", Toast.LENGTH_SHORT).show();
-
         }
-
     }
 
     public Loan getLoan() {
@@ -218,28 +161,13 @@ public class LoanFragment extends Fragment {
      * Clear values from all input fields
      */
     protected void reset() {
-        etDownPayment.getEditText().setText("");
-        etEditInterest.getEditText().setText("");
-        etFees.getEditText().setText("");
-        etLoanAmount.getEditText().setText("");
-        etTerm.getEditText().setText("");
-        etTradeIn.getEditText().setText("");
-        tvLoanInterestVal.setText("ج.م 0.00");
-        tvLoanTotal.setText("ج.م 0.00");
-        tvMonthlyPaymentVal.setText("ج.م 0.00");
+        etDownPayment.setText("");
+        etEditInterest.setText("");
+        etFees.setText("");
+        etLoanAmount.setText("");
+         etTerm.setText("");
+         tvLoanInterestVal.setText("$0.00");
+        tvLoanTotal.setText("$0.00");
+        tvMonthlyPaymentVal.setText("$0.00");
     }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putSerializable("loanAmount", (Serializable) loanAmount);
-
-        outState.putDouble("loanAmount", loanAmount);
-        outState.putDouble("loanInterest", loanInterest);
-        outState.putDouble("downPayment", downPayment);
-        outState.putDouble("tradeIn", tradeIn);
-        outState.putDouble("fees", fees);
-
-    }
-
 }
