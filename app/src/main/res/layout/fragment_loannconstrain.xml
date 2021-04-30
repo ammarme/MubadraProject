@@ -124,7 +124,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/llLoanOutputs"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -260,7 +260,7 @@
         android:layout_below="@+id/llLoanInputs"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="4dp"
         android:orientation="vertical"
         android:paddingLeft="20dp"
@@ -349,27 +349,32 @@
         android:layout_below="@+id/llReductions"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="120dp"
         android:background="@drawable/rounded_edittextwhite_btn"
         android:gravity="center"
         android:text="@string/calculate"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llReductions" />
+        app:layout_constraintTop_toBottomOf="@+id/llReductions"
+        app:layout_constraintVertical_bias="0.008" />
 
     <ImageButton
 
         android:id="@+id/resetbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+         android:layout_marginTop="25dp"
+
         android:src="@drawable/ic_reset"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCalculate"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llReductions" />
+        app:layout_constraintTop_toBottomOf="@+id/llReductions"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

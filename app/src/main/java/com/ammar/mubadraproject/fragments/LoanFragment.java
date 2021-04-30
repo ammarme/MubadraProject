@@ -31,7 +31,7 @@ public class LoanFragment extends Fragment {
     protected TextView tvLoanTotal, tvLoanInterestVal, tvMonthlyPaymentVal, tvLoanTotalCostVal;
     protected RadioButton rbYears, rbMonths;
     protected Button btnCalculate;
-ImageButton imageButton;
+    ImageButton imageButton;
     protected double loanAmount, loanInterest, salesTax, downPayment, tradeIn, fees;
     protected int terms;
     protected Loan loan;
@@ -70,7 +70,7 @@ ImageButton imageButton;
 //                tvLoanTotal.setText(cf.format(loan.getTotalLoanPayments()));
                 tvLoanInterestVal.setText(cf.format(loan.getTotalLoanInterest()));
                 tvLoanTotalCostVal.setText(cf.format(loan.getTotalCost()));
-                Toast.makeText(view.getContext(), "اضغط علي الايقونه بالاعلي لعرض جدول المدفوعات السنوي ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(),   cf.format(loan.getTotalCost()) +"القيمة الاجماليه للقرض\n"+"اضغط علي الايقونه بالاعلي لعرض جدول المدفوعات السنوي\n ", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -78,7 +78,7 @@ ImageButton imageButton;
             @Override
             public void onClick(View view) {
                 reset();
-             }
+            }
         });
         btnCalculate.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -165,9 +165,9 @@ ImageButton imageButton;
         etEditInterest.setText("");
         etFees.setText("");
         etLoanAmount.setText("");
-         etTerm.setText("");
-         tvLoanInterestVal.setText("$0.00");
-        tvLoanTotal.setText("$0.00");
+        etTerm.setText("");
+        tvLoanInterestVal.setText("$0.00");
+//        tvLoanTotal.setText("$0.00");
         tvMonthlyPaymentVal.setText("$0.00");
     }
 }
